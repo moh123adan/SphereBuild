@@ -27,7 +27,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative h-screen w-full">
+    <div id='home' className="relative h-screen w-full">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
