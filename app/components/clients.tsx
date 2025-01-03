@@ -2,24 +2,20 @@ import Image from 'next/image'
 
 const clients = [
   {
-    name: "TIPOX",
-    logoUrl: "/placeholder.svg?height=60&width=120"
-  },
-  {
     name: "EXCIPIA",
-    logoUrl: "/placeholder.svg?height=60&width=120"
+    logoUrl: "/images/logo5.png"
   },
   {
     name: "Vide",
-    logoUrl: "/placeholder.svg?height=60&width=120"
+    logoUrl: "/images/logo4.png"
   },
   {
     name: "DEHOTEL",
-    logoUrl: "/placeholder.svg?height=60&width=120"
+    logoUrl: "/images/logo3.png"
   },
   {
     name: "UMBER & CO",
-    logoUrl: "/placeholder.svg?height=60&width=120"
+    logoUrl: "/images/logo2.png"
   }
 ]
 

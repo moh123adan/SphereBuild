@@ -56,7 +56,7 @@ export default function Hero() {
           }`}
           aria-label="Scroll to content"
         >
-          <ChevronDown className="w-12 h-12 text-white animate-bounce" />
+          <ChevronDown className="w-24 h-12 text-white animate-bounce" />
         </button>
       </div>
     </div>
