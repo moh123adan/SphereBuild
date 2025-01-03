@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { Heart, Share2 } from "lucide-react";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // import useRouter for programmatic navigation
+import { Heart, Share2 } from "lucide-react";
 
 interface Project {
   id: number;
@@ -40,6 +41,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   const [likedProjects, setLikedProjects] = useState<number[]>([]);
+  const router = useRouter(); // Instantiate useRouter for programmatic navigation
 
   const toggleLike = (projectId: number) => {
     setLikedProjects((prev) =>
@@ -47,6 +49,11 @@ export default function Projects() {
         ? prev.filter((id) => id !== projectId)
         : [...prev, projectId]
     );
+  };
+
+  // Function to navigate to Keyask when the image is clicked
+  const handleImageClick = () => {
+    router.push("/keyask"); // Navigate to the keyask page
   };
 
   return (
@@ -61,42 +68,36 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="relative group aspect-square overflow-hidden bg-gray-100"
+              className="relative group aspect-square overflow-hidden bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <Image
-                src={project.imageUrl}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
-              />
+              <div
+                onClick={handleImageClick}
+                className="relative w-full h-full cursor-pointer"
+              >
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  layout="responsive"
+                  width={500}
+                  height={500}
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center justify-between">
-                    <button
-                      onClick={() => toggleLike(project.id)}
-                      className="flex items-center gap-2"
-                    >
-                      <Heart
-                        className={`w-5 h-5 transition-colors ${
-                          likedProjects.includes(project.id)
-                            ? "fill-red-500 text-red-500"
-                            : "text-white"
-                        }`}
-                      />
-                      <span>
-                        {project.likes +
-                          (likedProjects.includes(project.id) ? 1 : 0)}
-                      </span>
-                    </button>
-                    <button className="p-2 hover:text-[#F7C94B] transition-colors">
-                      <Share2 className="w-5 h-5" />
-                    </button>
-                  </div>
+              {/* Project info */}
+              <div className="absolute bottom-0 text-center  text-white p-4">
+                <h3 className="font-bold text-lg">{project.title}</h3>
+                <div className="flex items-center mt-2">
+                  <Heart
+                    className="mr-2 cursor-pointer"
+                    onClick={() => toggleLike(project.id)}
+                    color={likedProjects.includes(project.id) ? "red" : "white"}
+                  />
+                  <span>{project.likes}</span>
+                </div>
+                <div className="flex items-center mt-2">
+                  <Share2 className="mr-2 cursor-pointer" />
+                  <span>Share</span>
                 </div>
               </div>
             </div>

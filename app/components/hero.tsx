@@ -40,7 +40,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-5xl tracking-wider leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-6xl font-semibold text-white max-w-5xl tracking-wider leading-tight">
           LEADERS IN QUALITY
           <br />
           CONSTRUCTION AND
@@ -51,7 +51,7 @@ export default function Hero() {
         {/* Animated Scroll Arrow */}
         <button
           onClick={scrollToContent}
-          className={`absolute bottom-12 transform transition-all duration-500 ${
+          className={`absolute bottom-7 transform transition-all duration-500 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
           aria-label="Scroll to content"

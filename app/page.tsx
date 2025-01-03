@@ -7,6 +7,7 @@ import Projects from "./components/projects";
 import Clients from "./components/clients";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+// import Keyask from "./components/keyask";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
       <Clients />
       <Contact />
       <Footer />
+      {/* <Keyask /> */}
     </main>
+
   );
 }
