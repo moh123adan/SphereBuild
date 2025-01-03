@@ -1,7 +1,4 @@
 import Image from "next/image";
-import serv1 from "../../public/images/serv1.png";
-import serv2 from "../../public/images/serv2.png";
-import serv3 from "../../public/images/serv3.png";
 
 interface ServiceCardProps {
   title: string;
@@ -29,19 +26,19 @@ export default function Services() {
       title: "Preconstruction Planning",
       description:
         "Effective pre-construction services and planning is the cornerstone of a successful construction project. The Pioneer Approach to pre-construction is to serve both the Owner and Architect as a reliable source of current, complete, and accurate information. This enables the project team to make informed and well-grounded decisions relating to the balance of schedule, cost, and quality while considering not only the initial investment, but also the Life Cycle Cost implications.",
-      imageUrl: serv1,
+      imageUrl: "images/serv1.png",
     },
     {
       title: "Architectural Modelling",
       description:
         "The role of architectural model making in the architectural design process is irreplaceable. At present, architectural model is not only a presentation tool in the architect's toolbox, but also a creative product for everyone. Make an architectural model of the new house you just purchased, or the interior space the dream house you've recently designed.",
-      imageUrl: serv2,
+      imageUrl: "images/serv2.png",
     },
     {
       title: "Construction Management",
       description:
         "Construction Management is the planning, coordinating, and building of a project from conception to completion. This specialization is intended for Construction industry professionals, engineers, and architects looking to advance their careers. Students interested in learning about construction project management would also benefit from this specialization.",
-      imageUrl: serv3,
+      imageUrl: "images/serv3.png",
     },
   ];
 
